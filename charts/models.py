@@ -25,18 +25,31 @@ class Sprint(models.Model):
 
 class Amount_Progress_Done(models.Model):
     amount = models.FloatField()
+    date = models.DateField()
+
+    person = models.ForeignKey(Person)
+    sprint = models.ForeignKey(Sprint)
 
     def __str__(self):
         return str(self.amount)
 
 class Amount_Progress_InReview(models.Model):
     amount = models.FloatField()
+    date = models.DateField()
+
+    person = models.ForeignKey(Person)
+    sprint = models.ForeignKey(Sprint)
 
     def __str__(self):
         return str(self.amount)
 
 class Amount_Committed(models.Model):
     amount = models.FloatField()
+    date = models.DateField()
+
+    person = models.ForeignKey(Person)
+    sprint = models.ForeignKey(Sprint)
 
     def __str__(self):
         return str(self.amount)
+
